@@ -1,6 +1,5 @@
 # Data output
 returns.csv
-*.png
 
 # Python
 __pycache__/
