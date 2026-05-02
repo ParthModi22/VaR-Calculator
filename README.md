@@ -25,7 +25,7 @@ Confidence
 
 **Key insight:** The ranking flips between 95% and 99% confidence direct evidence of fat tails in NSE returns. At extreme confidence levels, Historical VaR exceeds Parametric because real market crashes (e.g., COVID-19 2020) push the left tail further than the normal distribution predicts.
 
-![1777719751199](image/README/1777719751199.png)
+![VaR Comparison](image/README/var_comparison.png)
 
 ---
 
