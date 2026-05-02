@@ -1,11 +1,3 @@
-"""
-Phase 4: Monte Carlo VaR.
-
-Simulates N random 1-day return paths drawn from N(μ, σ²) fit to historical data.
-The VaR is the (1-c) percentile of that simulated distribution. Extends naturally to
-non-linear portfolios (e.g. options) where Historical and Parametric methods break down.
-"""
-
 import pandas as pd
 import numpy as np
 

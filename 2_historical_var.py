@@ -1,10 +1,3 @@
-"""
-Phase 2: Historical Simulation VaR.
-
-Sort observed portfolio returns from worst to best; the VaR at confidence level c
-is the (1-c) percentile of those returns — no distributional assumption required.
-"""
-
 import pandas as pd
 import numpy as np
 

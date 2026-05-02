@@ -6,11 +6,11 @@ A Python implementation of three Value at Risk methodologies applied to an equal
 
 ## Methods Implemented
 
-| Method | Assumption | Best For |
-|---|---|---|
-| **Historical Simulation** | Past returns repeat | Capturing real tail events (crashes) |
-| **Parametric (Variance-Covariance)** | Returns are normally distributed | Fast, analytical estimate |
-| **Monte Carlo** | Returns drawn from N(µ, σ²) | Non-linear portfolios, extensions |
+| Method                               | Assumption                       | Best For                             |
+| ------------------------------------ | -------------------------------- | ------------------------------------ |
+| **Historical Simulation**            | Past returns repeat              | Capturing real tail events (crashes) |
+| **Parametric (Variance-Covariance)** | Returns are normally distributed | Fast, analytical estimate            |
+| **Monte Carlo**                      | Returns drawn from N(µ, σ²)      | Non-linear portfolios, extensions    |
 
 ---
 
@@ -19,11 +19,13 @@ A Python implementation of three Value at Risk methodologies applied to an equal
 ```
            Historical  Parametric  Monte Carlo
 Confidence
-95%             1.85%       1.67%        1.69%
-99%             3.10%       2.38%        2.40%
+95%             1.62%       1.76%        1.77%
+99%             2.98%       2.51%        2.53%
 ```
 
-**Key insight:** The ranking flips between 95% and 99% confidence — direct evidence of fat tails in NSE returns. At extreme confidence levels, Historical VaR exceeds Parametric because real market crashes (e.g., COVID-19 2020) push the left tail further than the normal distribution predicts.
+**Key insight:** The ranking flips between 95% and 99% confidence direct evidence of fat tails in NSE returns. At extreme confidence levels, Historical VaR exceeds Parametric because real market crashes (e.g., COVID-19 2020) push the left tail further than the normal distribution predicts.
+
+![1777719751199](image/README/1777719751199.png)
 
 ---
 
@@ -56,11 +58,11 @@ Scripts 2–4 can also be run independently for isolated output.
 
 ## Portfolio
 
-| Stock | Exchange | Weight |
-|---|---|---|
-| HDFC Bank | NSE | 33.3% |
-| Reliance Industries | NSE | 33.3% |
-| State Bank of India | NSE | 33.3% |
+| Stock               | Exchange | Weight |
+| ------------------- | -------- | ------ |
+| HDFC Bank           | NSE      | 33.3%  |
+| Reliance Industries | NSE      | 33.3%  |
+| State Bank of India | NSE      | 33.3%  |
 
 Data sourced via `yfinance` using NSE tickers (`.NS` suffix). Lookback window: **5 years** of daily closing prices.
 
@@ -68,7 +70,7 @@ Data sourced via `yfinance` using NSE tickers (`.NS` suffix). Lookback window: *
 
 ## Limitations & Extensions
 
-- VaR does not describe *how bad* losses beyond the threshold can get — **CVaR/Expected Shortfall** is the natural extension
+- VaR does not describe _how bad_ losses beyond the threshold can get — **CVaR/Expected Shortfall** is the natural extension
 - Parametric method underestimates tail risk when returns are leptokurtic (fat-tailed)
 - Monte Carlo can be extended to correlated multi-asset paths and non-linear instruments (options)
 - **Backtesting** (counting VaR breaches vs. expected ~5% of days) would validate model accuracy

@@ -1,8 +1,3 @@
-"""
-Phase 1: Fetch 3 years of daily price data for Indian equities and compute returns.
-Saves cleaned daily percentage returns to returns.csv for use by all subsequent scripts.
-"""
-
 import yfinance as yf
 import pandas as pd
 

@@ -1,10 +1,3 @@
-"""
-Phase 3: Parametric (Variance-Covariance) VaR.
-
-Assumes portfolio returns are normally distributed. Uses the inverse CDF (ppf) to
-find the loss threshold — fast and closed-form but underestimates fat-tail risk.
-"""
-
 import pandas as pd
 import numpy as np
 from scipy import stats

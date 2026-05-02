@@ -1,10 +1,3 @@
-"""
-Phase 5: Visualization & Comparison.
-
-Plots the historical return distribution as a histogram and overlays vertical lines
-for all three VaR methods at both confidence levels. Also prints a clean comparison table.
-"""
-
 import pandas as pd
 import numpy as np
 from scipy import stats
@@ -16,7 +9,6 @@ CONFIDENCE_LEVELS = [0.95, 0.99]
 N_SIMULATIONS = 100_000
 RANDOM_SEED = 42
 
-# ── VaR calculation functions (mirrors scripts 2–4) ──────────────────────────
 
 def historical_var(returns: pd.Series, confidence: float) -> float:
     return -np.percentile(returns, (1 - confidence) * 100)
@@ -34,7 +26,6 @@ def monte_carlo_var(returns: pd.Series, confidence: float, n_sims: int, seed: in
     return -np.percentile(simulated, (1 - confidence) * 100)
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
 
 def build_table(port: pd.Series) -> pd.DataFrame:
     rows = []
@@ -75,7 +66,7 @@ def plot(port: pd.Series) -> None:
     ax.set_xlabel("Daily Portfolio Return", fontsize=12)
     ax.set_ylabel("Density", fontsize=12)
     ax.set_title("Portfolio Return Distribution & VaR Thresholds\n"
-                 "HDFCBANK · RELIANCE · SBIN  (equally weighted, 3-year daily returns)",
+                 "HDFCBANK · RELIANCE · SBIN  (equally weighted, 5-year daily returns)",
                  fontsize=13)
     ax.xaxis.set_major_formatter(mticker.PercentFormatter(xmax=1, decimals=1))
     ax.legend(fontsize=9, framealpha=0.9)
